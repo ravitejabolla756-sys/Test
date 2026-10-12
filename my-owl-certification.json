@@ -1,0 +1,54 @@
+{
+  "generatedFrom": "89da07b6075c873d9ce6c77b551e8390073b0acc",
+  "tool": "MY OWL",
+  "analysisMode": "deterministic-ast",
+  "registeredProviders": 2,
+  "detectableProviders": 2,
+  "providers": [
+    {
+      "provider": "stripe",
+      "ruleId": "stripe-subscription-coupon-removed",
+      "fixture": "src/providers/stripe.ts",
+      "expectedFindings": 1,
+      "expectedSymbol": "subscriptions.create",
+      "classification": "IMPLEMENTED + DETECTABLE",
+      "status": "proven-regression-fixture"
+    },
+    {
+      "provider": "twilio",
+      "ruleId": "twilio-twiml-namespace-casing",
+      "fixture": "src/providers/twilio.ts",
+      "expectedFindings": 1,
+      "expectedSymbol": "Twiml.VoiceResponse",
+      "classification": "IMPLEMENTED + DETECTABLE",
+      "status": "ready-for-scan"
+    }
+  ],
+  "unsupportedProviders": [
+    {
+      "provider": "openai",
+      "classification": "IMPLEMENTED BUT NO ACTIVE DETECTION RULE",
+      "reason": "Scanner providersToAnalyze only wires 'stripe' and 'twilio'. No OpenAI provider class or rules exist in MY OWL registry."
+    },
+    {
+      "provider": "github",
+      "classification": "IMPLEMENTED BUT NO ACTIVE DETECTION RULE",
+      "reason": "No Octokit/GitHub APIProvider class or reviewed compatibility rules in MY OWL registry."
+    },
+    {
+      "provider": "aws",
+      "classification": "IMPLEMENTED BUT NO ACTIVE DETECTION RULE",
+      "reason": "No AWS SDK v3 APIProvider class or reviewed compatibility rules in MY OWL registry."
+    },
+    {
+      "provider": "slack",
+      "classification": "IMPLEMENTED BUT NO ACTIVE DETECTION RULE",
+      "reason": "Slack is integrated as a notification webhook/OAuth consumer in apps/web, but has no AST APIProvider or compatibility rules in registry."
+    },
+    {
+      "provider": "sendgrid",
+      "classification": "IMPLEMENTED BUT NO ACTIVE DETECTION RULE",
+      "reason": "SendGrid has no AST APIProvider or compatibility rules in registry."
+    }
+  ]
+}

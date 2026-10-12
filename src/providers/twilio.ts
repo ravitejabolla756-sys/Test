@@ -19,3 +19,14 @@ export async function sendSmsNotification(
     body
   });
 }
+
+// MY OWL compatibility certification fixture.
+// Intentionally contains reviewed legacy API usage.
+// Expected rule: twilio-twiml-namespace-casing
+export function buildLegacyVoiceResponse(): unknown {
+  const twilioClient = getTwilioClient();
+  // Target symbol: Twiml.VoiceResponse
+  const response = new (twilioClient as any).Twiml.VoiceResponse();
+  return response.toString();
+}
+
