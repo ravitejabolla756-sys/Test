@@ -1,0 +1,34 @@
+{
+  "name": "my-owl-provider-test-fixture",
+  "version": "1.0.0",
+  "description": "Deterministic test fixture containing realistic examples of third-party SDK/API usage for MY OWL compatibility scanning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "@clerk/backend": "^1.24.0",
+    "@elevenlabs/elevenlabs-js": "^2.0.0",
+    "@octokit/rest": "^21.0.0",
+    "@shopify/shopify-api": "^11.0.0",
+    "@slack/web-api": "^7.0.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "aws-sdk": "^2.1690.0",
+    "cloudflare": "^4.0.0",
+    "firebase": "^11.0.0",
+    "googleapis": "^144.0.0",
+    "groq-sdk": "^0.9.0",
+    "launchdarkly-node-server-sdk": "^7.0.0",
+    "openai": "^4.80.0",
+    "twilio": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}
