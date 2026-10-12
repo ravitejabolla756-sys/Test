@@ -45,10 +45,11 @@ declare module '@octokit/rest' {
   export interface OctokitOptions {
     auth?: string;
   }
-  export default class Octokit {
+  export class Octokit {
     constructor(options?: OctokitOptions);
     [key: string]: any;
   }
+  export default Octokit;
 }
 
 declare module 'googleapis' {
@@ -102,14 +103,28 @@ declare module '@slack/web-api' {
   export interface ClientOptions {
     token?: string;
   }
-  export default class WebClient {
+  export class WebClient {
     constructor(token?: string, options?: ClientOptions);
     files: {
       upload(params: Record<string, unknown>): Promise<unknown>;
     };
+    [key: string]: any;
   }
+  export default WebClient;
 }
 
 declare module '@supabase/supabase-js' {}
 
-declare module 'twilio' {}
+declare module 'twilio' {
+  namespace twilio {
+    export interface Twilio {
+      messages: {
+        create(params: Record<string, unknown>): Promise<unknown>;
+      };
+      [key: string]: any;
+    }
+  }
+  function twilio(accountSid?: string, authToken?: string, opts?: any): twilio.Twilio;
+  export = twilio;
+}
+
